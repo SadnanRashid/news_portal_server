@@ -8,7 +8,7 @@ const {
 } = require("../Controllers/newsController");
 
 router.get("/get", getAllNews);
-router.get("/get/:id", getTargetNews);
+router.get("/get-one/:id", getTargetNews);
 router.post("/post", postNews);
 
 module.exports = router;

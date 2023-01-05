@@ -1,11 +1,11 @@
 const { getCollection } = require("../Services/database");
-const { ObjectID } = require("mongodb");
+const { ObjectId } = require("mongodb");
 
 const QueryAllNews = async () => {
   try {
-    const query = getCollection("news").find({});
-    const allNews = await query;
-    return allNews;
+    const query = {};
+    const cursor = await getCollection("news").find(query).toArray();
+    return cursor;
   } catch (error) {
     return error;
   }
@@ -14,9 +14,10 @@ const QueryAllNews = async () => {
 const QueryNews = async (id) => {
   try {
     const query = { _id: ObjectId(id) };
-    const cursor = getCollection("news").findOne(query);
-    const news = await cursor;
-    return news;
+    const cursor = await getCollection("news").findOne(query);
+    console.log(cursor);
+    // const news = await cursor;
+    return cursor;
   } catch (error) {
     return error;
   }

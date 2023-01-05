@@ -1,7 +1,8 @@
 const { QueryAllNews, QueryNews, QueryPost } = require("../Services/news");
 
 const getAllNews = async (req, res) => {
-  const news = await QueryAllNews().toArray();
+  const news = await QueryAllNews();
+  console.log(1);
   return res.json(news);
 };
 
