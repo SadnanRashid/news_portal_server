@@ -1,6 +1,5 @@
 const express = require("express");
 const port = process.env.PORT || 5000;
-const { getCollection } = require("./Services/database");
 
 const app = express();
 //
@@ -13,8 +12,6 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  const a = getCollection("news");
-  console.log(a);
   res.send({ message: "Working..." });
 });
 //
