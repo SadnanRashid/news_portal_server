@@ -7,6 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //
+// get news router
+const newsRouter = require("./Routes/routes");
+app.use("/api", newsRouter);
+//
 app.listen(port, () => {
   console.log(`listening at port ${port}`);
 });
