@@ -10,3 +10,14 @@ const QueryAllNews = async () => {
     return error;
   }
 };
+
+const QueryNews = async (id) => {
+  try {
+    const query = { _id: ObjectId(id) };
+    const cursor = getCollection("news").findOne(query);
+    const news = await cursor;
+    return news;
+  } catch (error) {
+    return error;
+  }
+};
