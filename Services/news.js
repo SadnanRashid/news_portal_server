@@ -21,3 +21,12 @@ const QueryNews = async (id) => {
     return error;
   }
 };
+
+const QueryPost = (data) => {
+  try {
+    const post = getCollection("news").insertOne(data);
+    return post;
+  } catch (error) {
+    return error;
+  }
+};
