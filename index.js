@@ -10,3 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.listen(port, () => {
   console.log(`listening at port ${port}`);
 });
+
+app.get("/", (req, res) => {
+  res.send({ message: "Working..." });
+});
