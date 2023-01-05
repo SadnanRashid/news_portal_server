@@ -30,3 +30,5 @@ const QueryPost = (data) => {
     return error;
   }
 };
+
+module.exports = { QueryAllNews, QueryNews, QueryPost };
