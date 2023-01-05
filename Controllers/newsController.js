@@ -18,3 +18,5 @@ const postNews = async (req, res) => {
   const result = await QueryPost(data);
   return res.json(result);
 };
+
+module.exports = { getAllNews, getTargetNews, postNews };
